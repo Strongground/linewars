@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxkgipwcbmdsf"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_17ksg"]
+[ext_resource type="PackedScene" uid="uid://cq5n8x7mpbb01" path="res://base.tscn" id="2_tqse7"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_17ksg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 324)
+
+[node name="base" parent="." instance=ExtResource("2_tqse7")]
+position = Vector2(773, 308)
+growth_rate = 1.5
+connections = ["base2", "base3"]
+
+[node name="base2" parent="." instance=ExtResource("2_tqse7")]
+position = Vector2(565, 520)
+connections = ["base", "base4"]
+
+[node name="base3" parent="." instance=ExtResource("2_tqse7")]
+position = Vector2(565, 107)
+connections = ["base", "base4"]
+
+[node name="base4" parent="." instance=ExtResource("2_tqse7")]
+position = Vector2(372, 306)
+connections = ["base3", "base2"]

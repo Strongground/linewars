@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq5n8x7mpbb01"]
+
+[ext_resource type="Script" path="res://base.gd" id="1_ireo1"]
+[ext_resource type="Texture2D" uid="uid://btyhqb0e2po0s" path="res://assets/base.png" id="2_v677c"]
+
+[node name="base" type="Node2D"]
+script = ExtResource("1_ireo1")
+
+[node name="circle" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_v677c")
+
+[node name="strength_label" type="Label" parent="."]
+offset_left = -40.0
+offset_top = 32.0
+offset_right = 40.0
+offset_bottom = 55.0
+horizontal_alignment = 1
