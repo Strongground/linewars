@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxkgipwcbmdsf"]
+[gd_scene load_steps=4 format=3 uid="uid://cxkgipwcbmdsf"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_17ksg"]
 [ext_resource type="PackedScene" uid="uid://cq5n8x7mpbb01" path="res://base.tscn" id="2_tqse7"]
+[ext_resource type="Script" path="res://drawing.gd" id="3_vvr85"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_17ksg")
+
+[node name="drawing" type="Node2D" parent="."]
+script = ExtResource("3_vvr85")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 324)
@@ -19,9 +23,13 @@ position = Vector2(565, 520)
 connections = ["base", "base4"]
 
 [node name="base3" parent="." instance=ExtResource("2_tqse7")]
-position = Vector2(565, 107)
+position = Vector2(562, 107)
 connections = ["base", "base4"]
 
 [node name="base4" parent="." instance=ExtResource("2_tqse7")]
-position = Vector2(372, 306)
-connections = ["base3", "base2"]
+position = Vector2(337, 300)
+connections = ["base3", "base2", "base5"]
+
+[node name="base5" parent="." instance=ExtResource("2_tqse7")]
+position = Vector2(228, 115)
+connections = ["base4"]
